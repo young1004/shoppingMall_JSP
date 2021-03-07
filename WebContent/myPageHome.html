@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>회원 마이페이지</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.4.5.min.css" />
+<script src="jquery.mobile/jquery-1.11.1.min.js"></script>
+<script src="jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
+
+<meta name="viewport" content="width=device-width" ,initial-scale="1">
+
+<script>
+<!-- 검색 기능을 할 수 있도록 하는 스크립트-->
+$(document).ready(function(){
+  $("#myInput2").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable2 tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+.search {float:left;width:100%;height:42vh;}
+ .login {float:center;width:100%;height:6vh;}
+ .menu {float:left;width:15%;height:150vh;}
+ .mCont {float:left;width:84%;height:150vh; }
+
+
+</style>
+
+</head>
+
+<body>
+		
+	<!-- 메뉴 -->
+	
+<iframe class="login" src=loginAfterUser.jsp name=iframeSearch frameborder=0></iframe>
+<iframe class="search" src=mainSearchUser.jsp name=iframeSearch frameborder=0></iframe>
+<iframe class="menu" src=menuUser.jsp name=iframeLogin frameborder=0></iframe>
+<iframe class="mCont" src=myPageFirstScreen.jsp name=iframeMCont frameborder=0 align="middle"></iframe>
+
+
+</body>
+</html>
